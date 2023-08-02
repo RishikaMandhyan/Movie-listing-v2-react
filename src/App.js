@@ -3,6 +3,7 @@ import { useState } from "react";
 import List from "./components/Home";
 import LikedMovies from "./pages/LikedMovies";
 import MovieItem from "./components/MovieItem";
+import EditMovie from "./pages/EditMovie";
 
 
 
@@ -13,7 +14,6 @@ function App()
   if(x==null) x=new Array(0);
   const [likedmovies, setLikedmovies]=useState(x);
 
-
 return (<>
  
     <Router>
@@ -21,6 +21,7 @@ return (<>
                 <Route path="/" element={<List likedmovies={likedmovies} setLikedmovies={setLikedmovies}/>}></Route>
                 <Route path="/movie/:id" element={<MovieItem/>}></Route>
                 <Route path="/likes" element={<LikedMovies likedmovies={likedmovies}/>}></Route>
+                <Route path="/edit/:id" element={<EditMovie/>}></Route>
         </Routes>
     </Router>
     </>

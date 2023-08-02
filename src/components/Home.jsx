@@ -142,17 +142,17 @@ function List(props){
         {
              if(page==movies_3pages[0].page){
 
-                console.log("1st");
+                //console.log("1st");
                 setMovies(movies_3pages[0].movies_page)
              }
 
              else if(page==movies_3pages[1].page){
-                console.log("2nd");
+                //console.log("2nd");
                 setMovies(movies_3pages[1].movies_page)
              }
              else if(page==movies_3pages[2].page){
 
-                console.log("3rd");
+                //console.log("3rd");
                 setMovies(movies_3pages[2].movies_page)
              }
 
@@ -256,6 +256,7 @@ function List(props){
             <li>
             <Link to= {`/movie/${item.imdbID}`}>{item.Title}</Link>
             <button onClick={()=>{likemovie(item, item.imdbID)}}>Like</button>
+            <button><Link to={`/edit/${item.imdbID}`}>Edit</Link></button>
             </li>
 
         </>)}
